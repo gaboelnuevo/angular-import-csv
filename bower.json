@@ -1,0 +1,20 @@
+{
+  "name": "import-csv",
+  "authors": [
+    "Gabriel Sabillon <gaboelnuevo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "comma-separated-values": "^3.6.4"
+  }
+}

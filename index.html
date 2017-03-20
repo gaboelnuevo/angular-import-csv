@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Import CSV</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.25/angular.js" data-semver="1.2.25"></script>
+    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="bower_components/comma-separated-values/csv.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <input type="file" file-reader="fileContent" />
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <th  ng-repeat="column in columnsNames">
+            <select ng-model="columnsFields[column]">
+              <option value="">---Please select---</option>
+              <option ng-repeat="option in fields"  value="{{option}}">{{option}}</option>
+            </select>
+            <br />
+            {{ column }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in items">
+          <td ng-repeat="column in columnsNames">
+            {{ item[column] }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button ng-show="fileContent" ng-click="sendData()">Send</button>
+  </body>
+</html>
